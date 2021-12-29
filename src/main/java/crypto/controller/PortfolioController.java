@@ -16,6 +16,12 @@ public class PortfolioController extends ControllerBase{
     @Autowired
     CryptoService service;
 
+
+    @GetMapping("/welcome")
+    public String welcome(){
+        return "welcome to spring boot ";
+    }
+
     @GetMapping("/{userId}/getportfolio")
     public ResponseEntity<Portfolio> getPortfolio(@PathVariable int userId) {
         Portfolio portfolio = service.getPortfolio(userId);
